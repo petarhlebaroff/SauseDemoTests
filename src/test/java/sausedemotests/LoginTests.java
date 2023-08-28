@@ -1,39 +1,21 @@
 package sausedemotests;
 
 import core.BaseTest;
-import org.example.BrowserTypes;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
-import java.time.Duration;
 import java.util.List;
 import java.util.Locale;
 
-//@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class LoginTests extends BaseTest {
 
-    @BeforeEach
-    public void beforeAllTests(){
-        driver = startBrowser(BrowserTypes.CHROME);
-
-        // Configure wait
-        wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-
-        // Navigate to Google.com
-        driver.get("https://www.saucedemo.com/");
-
-        authenticateWithUser("standard_user", "secret_sauce");
-    }
 
     @Test
-//    @Order(1)
     public void userAuthenticated_when_validCredentialsProvided(){
-
 
         // Add Assert
         WebElement inventoryPageTitle = driver.findElement(By.xpath("//div[@class='app_logo']"));
@@ -45,17 +27,9 @@ public class LoginTests extends BaseTest {
     }
 
     @Test
-//    @Order(2)
     public void productAddedToShoppingCar_when_addToCart(){
         // Add Backpack and T-shirt to shopping cart
-        String backpackTitle = "Sauce Labs Backpack";
-        String shirtTitle = "Sauce Labs Bolt T-Shirt";
-
-        WebElement backpack = getProductByTitle(backpackTitle);
-        backpack.findElement(By.className("btn_inventory")).click();
-
-        var tshirt = getProductByTitle(shirtTitle);
-        tshirt.findElement(By.className("btn_inventory")).click();
+        addProductsToShoppingCart(backpackTitle, shirtTitle);
 
         driver.findElement(By.className("shopping_cart_link")).click();
 
@@ -74,17 +48,9 @@ public class LoginTests extends BaseTest {
     }
 
     @Test
-//    @Order(3)
     public void userDetailsAdded_when_checkoutWithValidInformation(){
         // Add Backpack and T-shirt to shopping cart
-        String backpackTitle = "Sauce Labs Backpack";
-        String shirtTitle = "Sauce Labs Bolt T-Shirt";
-
-        var backpack = getProductByTitle(backpackTitle);
-        backpack.findElement(By.className("btn_inventory")).click();
-
-        var tshirt = getProductByTitle(shirtTitle);
-        tshirt.findElement(By.className("btn_inventory")).click();
+        addProductsToShoppingCart(backpackTitle, shirtTitle);
 
         // Click on shopping Cart
         driver.findElement(By.className("shopping_cart_link")).click();
@@ -104,6 +70,7 @@ public class LoginTests extends BaseTest {
         var total = driver.findElement(By.className("summary_total_label")).getText();
         double expectedPrice = 15.99 + 29.99 + 3.68;
 
+        // Fix a problem with the decimal separator in order to compare price correctly
         DecimalFormatSymbols symbols = new DecimalFormatSymbols(Locale.US);
         symbols.setDecimalSeparator('.');
         symbols.setGroupingSeparator(',');
@@ -122,17 +89,9 @@ public class LoginTests extends BaseTest {
 
 
     @Test
-//    @Order(4)
     public void orderCompleted_when_addProduct_and_checkout_withConfirm(){
         // Add Backpack and T-shirt to shopping cart
-        String backpackTitle = "Sauce Labs Backpack";
-        String shirtTitle = "Sauce Labs Bolt T-Shirt";
-
-        var backpack = getProductByTitle(backpackTitle);
-        backpack.findElement(By.className("btn_inventory")).click();
-
-        var tshirt = getProductByTitle(shirtTitle);
-        tshirt.findElement(By.className("btn_inventory")).click();
+        addProductsToShoppingCart(backpackTitle, shirtTitle);
 
         // Click on shopping Cart
         driver.findElement(By.className("shopping_cart_link")).click();
