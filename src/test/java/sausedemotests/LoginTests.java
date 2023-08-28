@@ -15,8 +15,7 @@ public class LoginTests extends BaseTest {
 
 
     @Test
-    public void userAuthenticated_when_validCredentialsProvided(){
-
+    public void userAuthenticated_when_validCredentialsProvided() {
         // Add Assert
         WebElement inventoryPageTitle = driver.findElement(By.xpath("//div[@class='app_logo']"));
         wait.until(ExpectedConditions.visibilityOf(inventoryPageTitle));
@@ -27,7 +26,7 @@ public class LoginTests extends BaseTest {
     }
 
     @Test
-    public void productAddedToShoppingCar_when_addToCart(){
+    public void productAddedToShoppingCar_when_addToCart() {
         // Add Backpack and T-shirt to shopping cart
         addProductsToShoppingCart(backpackTitle, shirtTitle);
 
@@ -44,11 +43,11 @@ public class LoginTests extends BaseTest {
         Assertions.assertEquals(backpackTitle, items.get(0).getText(), "Item title not as expected");
         Assertions.assertEquals(shirtTitle, items.get(1).getText(), "Item title not as expected");
 
-//        refreshSauceDemoWebsite();
+        //        refreshSauceDemoWebsite();
     }
 
     @Test
-    public void userDetailsAdded_when_checkoutWithValidInformation(){
+    public void userDetailsAdded_when_checkoutWithValidInformation() {
         // Add Backpack and T-shirt to shopping cart
         addProductsToShoppingCart(backpackTitle, shirtTitle);
 
@@ -84,12 +83,12 @@ public class LoginTests extends BaseTest {
         Assertions.assertEquals(shirtTitle, items.get(1).getText(), "Item title not as expected");
         Assertions.assertEquals(expectedTotal, total, "Items total price not as expected");
 
-//        refreshSauceDemoWebsite();
+        //        refreshSauceDemoWebsite();
     }
 
 
     @Test
-    public void orderCompleted_when_addProduct_and_checkout_withConfirm(){
+    public void orderCompleted_when_addProduct_and_checkout_withConfirm() {
         // Add Backpack and T-shirt to shopping cart
         addProductsToShoppingCart(backpackTitle, shirtTitle);
 
@@ -119,7 +118,7 @@ public class LoginTests extends BaseTest {
         } else {
             Assertions.fail("Shopping cart is not empty");
         }
-//        refreshSauceDemoWebsite();
 
+        //        refreshSauceDemoWebsite();
     }
 }

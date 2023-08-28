@@ -16,6 +16,7 @@ public class ProductsTests extends BaseTest {
 
     @Test
     public void productAddedToShoppingCart_when_addToCart(){
+        // Add Backpack and T-shirt to shopping cart
         addProductsToShoppingCart(backpackTitle, shirtTitle);
 
         driver.findElement(By.className("shopping_cart_link")).click();
@@ -34,6 +35,7 @@ public class ProductsTests extends BaseTest {
 
     @Test
     public void userDetailsAdded_when_checkoutWithValidInformation(){
+        // Add Backpack and T-shirt to shopping cart
         addProductsToShoppingCart(backpackTitle, shirtTitle);
 
         driver.findElement(By.className("shopping_cart_link")).click();

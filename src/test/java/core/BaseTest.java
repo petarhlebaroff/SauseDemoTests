@@ -21,7 +21,6 @@ public class BaseTest {
 
     protected static WebDriver driver;
     protected static WebDriverWait wait;
-
     protected String backpackTitle = "Sauce Labs Backpack";
     protected String shirtTitle = "Sauce Labs Bolt T-Shirt";
 
