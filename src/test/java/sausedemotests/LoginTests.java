@@ -31,7 +31,7 @@ public class LoginTests extends BaseTest {
     }
 
     @Test
-    @Order(1)
+//    @Order(1)
     public void userAuthenticated_when_validCredentialsProvided(){
 
 
@@ -45,7 +45,7 @@ public class LoginTests extends BaseTest {
     }
 
     @Test
-    @Order(2)
+//    @Order(2)
     public void productAddedToShoppingCar_when_addToCart(){
         // Add Backpack and T-shirt to shopping cart
         String backpackTitle = "Sauce Labs Backpack";
@@ -74,7 +74,7 @@ public class LoginTests extends BaseTest {
     }
 
     @Test
-    @Order(3)
+//    @Order(3)
     public void userDetailsAdded_when_checkoutWithValidInformation(){
         // Add Backpack and T-shirt to shopping cart
         String backpackTitle = "Sauce Labs Backpack";
@@ -122,7 +122,7 @@ public class LoginTests extends BaseTest {
 
 
     @Test
-    @Order(4)
+//    @Order(4)
     public void orderCompleted_when_addProduct_and_checkout_withConfirm(){
         // Add Backpack and T-shirt to shopping cart
         String backpackTitle = "Sauce Labs Backpack";

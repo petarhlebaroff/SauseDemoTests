@@ -31,7 +31,7 @@ public class ProductsTests extends BaseTest {
     }
 
     @Test
-    @Order(1)
+//    @Order(1)
     public void productAddedToShoppingCart_when_addToCart(){
         String backpackTitle = "Sauce Labs Backpack";
         String shirtTitle = "Sauce Labs Bolt T-Shirt";
@@ -54,7 +54,7 @@ public class ProductsTests extends BaseTest {
     }
 
     @Test
-    @Order(2)
+//    @Order(2)
     public void userDetailsAdded_when_checkoutWithValidInformation(){
         String backpackTitle = "Sauce Labs Backpack";
         String shirtTitle = "Sauce Labs Bolt T-Shirt";
@@ -95,7 +95,7 @@ public class ProductsTests extends BaseTest {
     }
 
     @Test
-    @Order(3)
+//    @Order(3)
     public void orderCompleted_when_addProduct_and_checkout_withConfirm(){
         // Add Backpack and T-shirt to shopping cart
         String backpackTitle = "Sauce Labs Backpack";
