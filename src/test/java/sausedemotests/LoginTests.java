@@ -119,6 +119,7 @@ public class LoginTests extends BaseTest {
         } else {
             Assertions.fail("Shopping cart is not empty");
         }
+//        refreshSauceDemoWebsite();
 
     }
 }

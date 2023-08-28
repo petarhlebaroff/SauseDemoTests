@@ -27,6 +27,9 @@ public class ProductsTests extends BaseTest {
 
         Assertions.assertEquals(backpackTitle, items.get(0).getText(), "Item title not as expected");
         Assertions.assertEquals(shirtTitle, items.get(1).getText(), "Item title not as expected");
+
+        //        refreshSauceDemoWebsite();
+
     }
 
     @Test
@@ -61,6 +64,8 @@ public class ProductsTests extends BaseTest {
         Assertions.assertEquals(backpackTitle, items.get(0).getText(), "Item title not as expected");
         Assertions.assertEquals(shirtTitle, items.get(1).getText(), "Item title not as expected");
         Assertions.assertEquals(expectedTotal, total, "Items total price not as expected");
+
+        //        refreshSauceDemoWebsite();
     }
 
     @Test
@@ -94,5 +99,7 @@ public class ProductsTests extends BaseTest {
         } else {
             Assertions.fail("Shopping cart is not empty");
         }
+
+        //        refreshSauceDemoWebsite();
     }
 }
